@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attendance</title>
+    
+    
+</head>
+<body>
+    <div >
+        
+        <div >
+            <p >{{mess}}</p>
+            <div>
+                    <h2 style="padding: 15px;background-color: #15dd58;color: white;">Today's
+                        Attendance </h2>
+                    <a href="/attendence">
+                        <button id='Abutton'
+                            type='submit' style="font-size: 20px">Take Attendance
+                        </button>
+                    </a>
+                    <table style="background-color: white;">
+                        <tr>
+                            <td><b>SNo: </b></td>
+                            <td><b>Name </b></td>
+                            <td><b>ID   </b></td>
+                            <td><b>Time </b></td>
+                            <td><b>Date </b></td>
+                        </tr>
+                        {% if l %}
+
+                        {% for i in range(l) %}
+                        <tr>
+                            <td>{{ i+1 }}</td>
+                            <td>{{ name[i] }}</td>
+                            <td>{{ id[i] }}</td>
+                            <td>{{ time[i] }}</td>
+                            <td>{{datee[i]}}</td>
+                        </tr>
+                        {% endfor %}
+                        {% endif %}
+                    </table>
+            </div>
+            <div >
+                <div class=>
+                        <div>
+                        <form action='/addEmployee' method="POST" enctype="multipart/form-data">
+                            <h2 style="padding: 15px;background-color: #15dd58;color: white;">Add
+                                New Employee </h2>
+                            <label style="font-size: 20px"><b>Enter Employee Name</b></label>
+                            <br>
+                            <input type="text" id="newempname" name='newempname' required>
+                            <br>
+                            <label style="font-size: 20px;"><b>Enter Employee Id</b></label>
+                            <br>
+                            <input type="text" id="newempeid" name='newempid' required>
+                            <br>
+                            <button id="add" type='submit' style="font-size: 25px" >Add New Employee
+                            </button>
+                            <h5 style="padding: 25px;"><i>Total Employees Registered: {{totalregistration}}</i></h5>
+                        </form>
+                    </div>
+
+                </div>
+            
+            </div>
+        </div>
+
+    </div>
+    <!-- <div>
+        <a href='/admin'><button id="admin"> Admin </button></a>
+        <table style="background-color: white;">
+            <tr>
+                <td><b>SNo: </b></td>
+                <td><b>Name </b></td>
+                <td><b>ID   </b></td>
+                <td><b>Time </b></td>
+                <td><b>Date </b></td>
+            </tr>
+            {% if l %}
+
+            {% for i in range(l) %}
+            <tr>
+                <td>{{ i+1 }}</td>
+                <td>{{ name[i] }}</td>
+                <td>{{ id[i] }}</td>
+                <td>{{ time[i] }}</td>
+                <td>{{datee[i]}}</td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+        </table>
+    </div>  -->
+</body>
+</html>
